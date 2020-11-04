@@ -10,9 +10,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "boardgame_manager.settings")
 
 application = ProtocolTypeRouter({
   "http": get_asgi_application(),
-  "websocket": AuthMiddlewareStack(
+  "websocket":
         URLRouter(
             chat_manager.routing.websocket_urlpatterns
         )
-    ),
 })

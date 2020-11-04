@@ -32,14 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'channels',
+    'chat_manager',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'card_manager',
-    'chat_manager',
+
 
 ]
 
@@ -128,7 +128,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Channels
-# Channels
 ASGI_APPLICATION = 'boardgame_manager.asgi.application'
 CHANNEL_LAYERS = {
     'default': {

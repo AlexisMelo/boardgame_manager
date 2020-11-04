@@ -22,6 +22,12 @@
         );
 
         chatSocket.onmessage = function(e) {
+            const obj = {};
+            for (let k in e) {
+                obj[k] = e[k];
+            }
+
+            document.querySelector('#chat-log').value += "---------------\n" + JSON.stringify(obj);
             const data = JSON.parse(e.data);
             document.querySelector('#chat-log').value += (data.message + '\n');
         };
@@ -45,6 +51,9 @@
             }));
             messageInputDom.value = '';
         };
+
+        console.log(chatSocket);
+
     </script>
 </body>
 </html>
