@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+
+    <!-- Titre de la page, à garder dans base.html car pas dheritage de blocks avec include -->
+    <title> {% block title %} Base Template {% endblock %}</title>
+
+    <!-- Head, dispo dans templates -->
+    {% include "head.html" %}
+
+    <!-- Stylesheets, à garder dans base.html car pas dheritage de blocks avec include -->
+    {% block stylesheets %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Header, dispo dans templates -->
+    {% include "header.html" %}
+
+    <main class="container">
+
+        <!-- Contenu de la page, à redefinir à chaque tempalate -->
+        {% block content %}
+
+            <!-- Contenu de la page d'accueil, dispo dans templates -->
+            {% include "index.html" %}
+
+        {% endblock %}
+
+    </main>
+
+    <!-- Footer, dispo dans templates -->
+    {% include "footer.html" %}
+
+    <!-- gestion des scripts, dispo dans templates -->
+    {% include "scripts.html" %}
+
+    <!-- Scripts, à garder dans base.html car pas dheritage de blocks avec include -->
+    {% block javascripts %}
+    {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+.btn-nouvelle-partie {
+    position: fixed;
+    top: 30%;
+    left: 42%;
+}
+
+.modal .row {
+    margin-bottom: 0;
+}

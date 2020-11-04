@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+<!-- container présent sur base.html -->
+{% block content %}
+    <button class="btn-nouvelle-partie waves-effect waves-light btn-large red modal-trigger" data-target="modal-rejoindrepartie">Rejoindre une partie</button>
+
+    <form id="modal-rejoindrepartie" action="{% url "rejoindre_party" %}" method="post" class="modal">
+        {% csrf_token %}
+        <div class="modal-content">
+            <div class="input-field">
+                {{ form }}
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row center-align">
+                <div class="col s6">
+                    <button type="button" class="modal-close waves-effect btn-flat waves-red">Retour</button>
+                </div>
+                <div class="col s6">
+                    <button type="submit" class="waves-effect waves-white btn green">
+                    Rejoindre
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <img style="position: fixed; top: 45%; left: 42%; " src="{% static "boardgame_manager/img/dance.gif" %}" alt="Accueil danse">
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'boardgame_manager/js/index.js' %}"></script>
+{% endblock %}
